@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TodoItem.module.css";
 
 function TodoItem(props) {
@@ -29,9 +29,15 @@ function TodoItem(props) {
 
   const handleUpdatedDone = (event) => {
     if (event.key === "Enter") {
-      setState({ editing: false })
+      setState({ editing: false });
     }
   };
+
+  useEffect(() => {
+    return () => {
+      console.log("Cleaning up...");
+    }
+  }, [])
 
   return (
     <li className={styles.item}>
