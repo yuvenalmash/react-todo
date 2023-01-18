@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { FaPlusCircle } from "react-icons/fa";
+import React, { useState } from 'react';
+import { FaPlusCircle } from 'react-icons/fa';
 
 const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
-    title: "",
+    title: '',
   });
 
   const onChange = (e) => {
@@ -18,10 +18,10 @@ const InputTodo = (props) => {
     if (inputText.title.trim()) {
       props.addTodoProps(inputText.title);
       setInputText({
-        title: "",
+        title: '',
       });
     } else {
-      alert("Please write item");
+      alert('Please write item');
     }
   };
 
